@@ -1,0 +1,13 @@
+# Structured-Pseudocode-mind-language
+
+> A VS Code extension plus Node.js bridge for .mind structured pseudocode: live semantic highlighting, indent-level guides, two-color diagnostics, analyze-on-Enter, and `# @d` driven generation of Python 3 and C11 implementations.
+
+## Layout
+- [extension/](extension/): TypeScript client - extension.ts, semanticTokens.ts, indentDecoration.ts, diagnosticManager.ts, [extension/syntaxes/mind.tmLanguage.json](extension/syntaxes/mind.tmLanguage.json)
+- [bridge/](bridge/): Express service on :3456 - mindAnalyzer.js, codeGenerator.js, deepseekClient.js, reasonixSession.js
+- [package/](package/): distributable kit - start.bat, 使用教程.txt, 示例.mind
+
+## Notes
+- 35 files; TypeScript + JavaScript + JSON + Markdown, docs in Chinese.
+- Requires a DeepSeek API key on the bridge side; the extension caches analysis locally.
+- Install the .vsix from inside VS Code (Extension panel), not by double-clicking.
